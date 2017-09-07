@@ -52,8 +52,8 @@
     background: #485b6e !important;
 }
 
-.selected-human:after{ content: "\f00d" }
-.selected-pc:after{ content: "\f10c" }
+.selected-human:after{ content: "\f00d" !important }
+.selected-pc:after{ content: "\f10c" !important }
 
 
  
