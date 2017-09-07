@@ -18,24 +18,48 @@
     <div class="container">
 
         <div class="row">
-            <h5 class="center-align">Jogo da velha</h5>
-            <div id="gameBoard" class="game">
-                <!-- first row selected-pc -->
-                <div class="item" data-pos="0"></div>
-                <div class="item" data-pos="1"></div>
-                <div class="item" data-pos="2"></div>
-                <!-- second row -->
-                <div class="item" data-pos="3"></div>
-                <div class="item" data-pos="4"></div>
-                <div class="item" data-pos="5"></div>
-                <!-- third row -->
-                <div class="item" data-pos="6"></div>
-                <div class="item" data-pos="7"></div>
-                <div class="item" data-pos="8"></div>
+            <div class="col s12">
+                <h5 class="center-align header">Jogo da velha</h5>
 
-                <button id="reset" class="reset-game btn waves-effect waves-light">Reiniciar Jogo</button>
             </div>
+        </div>
 
+        <div class="row">
+            <div class="col s6">
+
+                <form class="col s12">
+                    <div class="input-field col s12">
+                        <select id="mode">
+                            <option value="0">Busca cega - Muito Fácil</option>
+                            <option value="1">MinMax com função de azar - Fácil</option>
+                            <option value="2">MinMax - Difícil</option>
+                        </select>
+                        <label>Selecione a dificuldade</label>
+                    </div>
+                     
+
+                    <a id="reset" href="#" class="right-align btn waves-effect waves-light">Reiniciar Jogo</a>
+                </form>
+
+            </div>
+            <div class="col s6">
+                
+                <div id="gameBoard" class="game">
+                    <!-- first row selected-pc -->
+                    <div class="item" data-pos="0"></div>
+                    <div class="item" data-pos="1"></div>
+                    <div class="item" data-pos="2"></div>
+                    <!-- second row -->
+                    <div class="item" data-pos="3"></div>
+                    <div class="item" data-pos="4"></div>
+                    <div class="item" data-pos="5"></div>
+                    <!-- third row -->
+                    <div class="item" data-pos="6"></div>
+                    <div class="item" data-pos="7"></div>
+                    <div class="item" data-pos="8"></div>
+                </div>
+
+            </div>
         </div>
     </div>
 
