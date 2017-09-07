@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <title>Jogo da velha</title>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+
+
+
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row">
+            <h5 class="center-align">Jogo da velha</h5>
+            <div id="gameBoard" class="game">
+                <!-- first row selected-pc -->
+                <div class="item" data-pos="0"></div>
+                <div class="item" data-pos="1"></div>
+                <div class="item" data-pos="2"></div>
+                <!-- second row -->
+                <div class="item" data-pos="3"></div>
+                <div class="item" data-pos="4"></div>
+                <div class="item" data-pos="5"></div>
+                <!-- third row -->
+                <div class="item" data-pos="6"></div>
+                <div class="item" data-pos="7"></div>
+                <div class="item" data-pos="8"></div>
+
+                <button id="reset" class="reset-game btn waves-effect waves-light">Reiniciar Jogo</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <script src="js/state.js"></script>
+    <script src="js/minmax.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
