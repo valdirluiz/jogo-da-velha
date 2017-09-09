@@ -6,21 +6,21 @@ function State(old) {
       this.aiSymbol = old.aiSymbol.slice(0);
       this.playerSymbol = old.playerSymbol.slice(0);
     } else {
-    // Otherwise start with empty board, and player is X
+     
       this.board = ['E','E','E','E','E','E','E','E','E'];  
       this.turn = 'X';
       this.aiSymbol = 'O';
       this.playerSymbol = 'X';
     }
-    // Terminal game flag
+     
     this.result = 'active';
-    // Label to identify move that results in this state during recursion
+     
     this.element = '';
-    // Function to switch active player for minmax scoring
+     
     this.advanceTurn = function() {
       this.turn = this.turn === 'X' ? 'O' : 'X';
     }
-    // Function to determine if game is complete
+     
     this.isTerminal = function() {
       const lines = [
         [0, 1, 2],
@@ -45,7 +45,7 @@ function State(old) {
       }
       return false;
     }
-    // Function to find all possible moves
+     
     this.moves = function() {
       arr = this.board.reduce(function(array,el,index){
         if (el === 'E') {

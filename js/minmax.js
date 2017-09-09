@@ -11,7 +11,7 @@ function minmax(state) {
     }
   }
 
-  
+
   newStatesSet = state.moves().map(function (el) {
     var newState = new State(state);
     newState.board[el] = state.turn.slice(0);
