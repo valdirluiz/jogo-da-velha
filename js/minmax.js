@@ -1,5 +1,6 @@
 
 function minmax(state) {
+  interactionsPerTurn++;
   if (state.isTerminal() === true) {
     if (state.result === state.playerSymbol) {
       return -10;
@@ -10,7 +11,7 @@ function minmax(state) {
     }
   }
 
-  // Generate list of possible new game states (moves) 
+  
   newStatesSet = state.moves().map(function (el) {
     var newState = new State(state);
     newState.board[el] = state.turn.slice(0);
@@ -18,11 +19,10 @@ function minmax(state) {
     newState.element = el;
     return newState;
   });
-  // Array to hold all child scores
+   
   var newStateScores = [];
 
-  // For each of these states, add the minmax score of 
-  // that state to the scoreList
+   
   newStatesSet.forEach(function (newState) {
     var newStateScore = minmax(newState);
     newStateScores.push(newStateScore);

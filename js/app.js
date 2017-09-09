@@ -1,11 +1,10 @@
 
-var mode = 0;
-var isRunning = false;
+
 
 var _showResult = function (state) {
     if (state.isTerminal()) {
         if (state.result === 'DRAW') {
-            Materialize.toast('Deu empate!', 4000)
+            Materialize.toast('Deu empate!', 4000);
         } else {
             if (state.result === 'O') {
                 Materialize.toast('Bob ganhou!', 4000);
@@ -18,18 +17,20 @@ var _showResult = function (state) {
 };
 
 var _aiAction = function (state, aiPlayer, mode) {
-
+    plays++;
     var aiPosition;
 
     if (mode == 0) {
         var movePosition = Math.floor(Math.random() * state.moves().length);
         aiPosition = state.moves()[movePosition];
+        interactionsPerTurn++;
     } if (mode == 1) {
         if (Math.random() * 100 <= 40) {
             aiPosition = aiMove(state);
         } else {
             var movePosition = Math.floor(Math.random() * state.moves().length);
             aiPosition = state.moves()[movePosition];
+            interactionsPerTurn++;
         };
     } else if (mode == 2) {
         aiPosition = aiMove(state);
@@ -43,6 +44,12 @@ var _aiAction = function (state, aiPlayer, mode) {
             _showResult(state);
         };
     });
+
+    interactions = interactions + interactionsPerTurn; 
+    media = interactions / plays;
+    $("#media").val(media);
+    $("#interactions").val(interactionsPerTurn);
+    $("#jogadas").val(plays);
 
 
 };
@@ -90,6 +97,14 @@ $(document).ready(function () {
         $(".item").each(function (index) {
             $(this).removeClass("selected-human selected-pc")
         });
+
+        interactions = 0;
+        interactionsPerTurn = 0; 
+        plays = 0;
+        media = 0;
+        $("#media").val(media);
+        $("#interactions").val(interactionsPerTurn);
+        $("#jogadas").val(plays);
     });
 
     $('#mode').on('change', function () {

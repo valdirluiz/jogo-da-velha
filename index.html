@@ -3,13 +3,13 @@
 <head>
     <title>Jogo da velha</title>
 
-     
-   <link rel="stylesheet prefetch" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet prefetch" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
     <link rel="stylesheet" type="text/css" href="css/app.css">
 
-	<meta charset="UTF-8"> 
+    <meta charset="UTF-8">
 
 
 
@@ -37,14 +37,31 @@
                         </select>
                         <label>Selecione a dificuldade</label>
                     </div>
-                     
+
+                    <div class="input-field col s12">
+                        <input disabled value="0" id="jogadas" type="text" >
+                        <label for="jogadas">Jogadas</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input disabled value="0" id="interactions" type="text" >
+                        <label for="jogadas">Interações da última jogada</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input disabled value="0" id="media" type="text" >
+                        <label for="jogadas">Média</label>
+                    </div>
+
+                   
+
 
                     <a id="reset" href="#" class="right-align btn waves-effect waves-light">Reiniciar Jogo</a>
                 </form>
 
             </div>
             <div class="col s6">
-                
+
                 <div id="gameBoard" class="game">
                     <!-- first row selected-pc -->
                     <div class="item" data-pos="0"></div>
@@ -70,6 +87,7 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
+    <script src="js/load.js"></script>
     <script src="js/state.js"></script>
     <script src="js/minmax.js"></script>
     <script src="js/app.js"></script>
